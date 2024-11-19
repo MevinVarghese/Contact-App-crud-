@@ -1,0 +1,161 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Table Container */
+.table-container {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Navbar */
+.table-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.table-navbar h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.table-navbar button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+th {
+  font-weight: bold;
+}
+
+td i {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+td i.fa-trash {
+  color: #dc3545;
+}
+
+td i:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+/* Form Styles */
+form {
+  margin: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+form button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+form button[type="button"] {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .table-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-navbar div:last-child {
+    margin-top: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  form input {
+    font-size: 14px;
+  }
+}

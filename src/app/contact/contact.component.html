@@ -1,0 +1,65 @@
+<div class="table-container">
+  <nav class="table-navbar">
+    <div>
+      <h4>Manage Contacts</h4>
+    </div>
+    <div>
+      <button class="delete-button" (click)="onDeleteContact()">Delete</button>
+      <button id="add-button" class="add" (click)="addContact()">
+        Add New Contact
+      </button>
+    </div>
+  </nav>
+  <table border="0">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Contact No.</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.age }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.contactNo }}</td>
+        <td>
+          <i class="fa-solid fa-pen" (click)="editContact(contact)"></i>
+          <i class="fa-solid fa-trash" (click)="deleteContact(contact.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedContact">
+    <form (ngSubmit)="saveContact()">
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="selectedContact.name" name="name" />
+      </label>
+      <label>
+        Age:
+        <input type="number" [(ngModel)]="selectedContact.age" name="age" />
+      </label>
+      <label>
+        Email:
+        <input type="email" [(ngModel)]="selectedContact.email" name="email" />
+      </label>
+      <label>
+        Contact No:
+        <input
+          type="text"
+          [(ngModel)]="selectedContact.contactNo"
+          name="contactNo"
+        />
+      </label>
+      <button type="submit">Save</button>
+      <button type="button" (click)="selectedContact = null">Cancel</button>
+    </form>
+  </div>
+</div>
